@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Mail, Users, Calendar, Star } from "lucide-react";
 
 const benefits = [
@@ -26,11 +27,18 @@ const benefits = [
 ];
 
 const Join = () => {
+  const [titleRef, titleVisible] = useScrollAnimation(0.2);
+  const [benefitsRef, benefitsVisible] = useScrollAnimation(0.1);
+  const [ctaRef, ctaVisible] = useScrollAnimation(0.3);
+
   return (
     <section id="join" className="py-20 gradient-subtle">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-16 animate-fade-in">
+          <div 
+            ref={titleRef}
+            className={`mb-16 scroll-fade-in ${titleVisible ? 'visible' : ''}`}
+          >
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
               Ready to Join?
             </h2>
@@ -40,9 +48,12 @@ const Join = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div 
+            ref={benefitsRef}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          >
             {benefits.map((benefit, index) => (
-              <Card key={benefit.title} className="border-0 bg-white/80 backdrop-blur-sm hover:shadow-elegant transition-all duration-300 animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
+              <Card key={benefit.title} className={`border-0 bg-white/80 backdrop-blur-sm hover:shadow-elegant transition-all duration-300 scroll-fade-in stagger-${index + 1} ${benefitsVisible ? 'visible' : ''}`}>
                 <CardContent className="p-6 text-center">
                   <benefit.icon className="w-8 h-8 text-primary mx-auto mb-4" />
                   <h3 className="font-display text-lg font-semibold text-primary mb-2">
@@ -56,7 +67,10 @@ const Join = () => {
             ))}
           </div>
           
-          <div className="animate-slide-up" style={{animationDelay: '0.4s'}}>
+          <div 
+            ref={ctaRef}
+            className={`scroll-fade-in ${ctaVisible ? 'visible' : ''}`}
+          >
             <Button variant="primary" size="lg" className="shadow-glow mr-4 mb-4">
               Join Our Society
             </Button>

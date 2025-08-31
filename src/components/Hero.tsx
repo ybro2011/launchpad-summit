@@ -47,10 +47,14 @@ const Hero = () => {
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+      <div 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer group"
+        onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+      >
+        <div className="w-6 h-10 border-2 border-white/50 group-hover:border-white/80 rounded-full flex justify-center transition-colors duration-200">
+          <div className="w-1 h-3 bg-white/50 group-hover:bg-white/80 rounded-full mt-2 transition-colors duration-200"></div>
         </div>
+        <p className="text-white/60 text-xs mt-2 group-hover:text-white/80 transition-colors duration-200">Scroll</p>
       </div>
     </section>
   );

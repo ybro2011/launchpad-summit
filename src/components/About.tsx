@@ -1,9 +1,18 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 const About = () => {
+  const [titleRef, titleVisible] = useScrollAnimation(0.2);
+  const [contentRef, contentVisible] = useScrollAnimation(0.2);
+  const [quoteRef, quoteVisible] = useScrollAnimation(0.3);
+
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-20 bg-background section-connector">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
+          <div 
+            ref={titleRef}
+            className={`text-center mb-16 scroll-fade-in ${titleVisible ? 'visible' : ''}`}
+          >
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
               Our Mission
             </h2>
@@ -14,7 +23,10 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-up">
+            <div 
+              ref={contentRef}
+              className={`scroll-slide-left ${contentVisible ? 'visible' : ''}`}
+            >
               <h3 className="font-display text-2xl font-semibold text-primary mb-6">
                 What We Do
               </h3>
@@ -46,7 +58,10 @@ const About = () => {
               </div>
             </div>
             
-            <div className="animate-slide-up" style={{animationDelay: '0.2s'}}>
+            <div 
+              ref={quoteRef}
+              className={`scroll-slide-right ${quoteVisible ? 'visible' : ''}`}
+            >
               <div className="bg-gradient-subtle rounded-lg p-8 shadow-elegant">
                 <blockquote className="font-display text-2xl text-primary italic mb-4 leading-relaxed">
                   "The entrepreneurial mindset isn't just about starting companies—it's about solving problems, 

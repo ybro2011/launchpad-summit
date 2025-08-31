@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Calendar, MapPin, Users } from "lucide-react";
 
 const events = [
@@ -33,10 +34,16 @@ const events = [
 ];
 
 const Events = () => {
+  const [titleRef, titleVisible] = useScrollAnimation(0.2);
+  const [eventsRef, eventsVisible] = useScrollAnimation(0.1);
+
   return (
-    <section id="events" className="py-20 bg-background">
+    <section id="events" className="py-20 bg-background section-connector">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
+        <div 
+          ref={titleRef}
+          className={`text-center mb-16 scroll-fade-in ${titleVisible ? 'visible' : ''}`}
+        >
           <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
             Upcoming Events
           </h2>
@@ -46,9 +53,12 @@ const Events = () => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div 
+          ref={eventsRef}
+          className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        >
           {events.map((event, index) => (
-            <Card key={event.title} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 animate-slide-up border border-border/50" style={{animationDelay: `${index * 0.1}s`}}>
+            <Card key={event.title} className={`group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 border border-border/50 scroll-fade-in stagger-${index + 1} ${eventsVisible ? 'visible' : ''}`}>
               <CardContent className="p-6">
                 <div className="mb-4">
                   <span className="inline-block px-3 py-1 text-xs font-body font-medium bg-primary/10 text-primary rounded-full mb-3">

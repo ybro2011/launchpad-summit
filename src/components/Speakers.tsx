@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import speaker1 from "@/assets/speaker-1.jpg";
 import speaker2 from "@/assets/speaker-2.jpg";
 import speaker3 from "@/assets/speaker-3.jpg";
@@ -28,10 +29,16 @@ const speakers = [
 ];
 
 const Speakers = () => {
+  const [titleRef, titleVisible] = useScrollAnimation(0.2);
+  const [cardsRef, cardsVisible] = useScrollAnimation(0.1);
+
   return (
-    <section id="speakers" className="py-20 gradient-subtle">
+    <section id="speakers" className="py-20 gradient-subtle section-connector">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
+        <div 
+          ref={titleRef}
+          className={`text-center mb-16 scroll-fade-in ${titleVisible ? 'visible' : ''}`}
+        >
           <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
             Learn From Industry Leaders
           </h2>
@@ -41,9 +48,12 @@ const Speakers = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div 
+          ref={cardsRef}
+          className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto"
+        >
           {speakers.map((speaker, index) => (
-            <Card key={speaker.name} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 animate-slide-up border-0 bg-white/80 backdrop-blur-sm" style={{animationDelay: `${index * 0.2}s`}}>
+            <Card key={speaker.name} className={`group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-0 bg-white/80 backdrop-blur-sm scroll-fade-in stagger-${index + 1} ${cardsVisible ? 'visible' : ''}`}>
               <CardContent className="p-6">
                 <div className="relative mb-6">
                   <img
