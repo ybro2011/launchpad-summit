@@ -6,25 +6,25 @@ import speaker3 from "@/assets/speaker-3.jpg";
 
 const speakers = [
   {
-    name: "Sarah Chen",
-    title: "CEO & Founder",
-    company: "TechVenture Labs",
+    name: "Speaker Name 1",
+    title: "Job Title",
+    company: "Company Name",
     image: speaker1,
-    bio: "Serial entrepreneur with 3 successful exits. Expert in scaling tech startups from idea to IPO."
+    bio: "Brief description of the speaker's background and expertise."
   },
   {
-    name: "Marcus Rodriguez",
-    title: "Managing Partner",
-    company: "Innovation Capital",
+    name: "Speaker Name 2",
+    title: "Job Title",
+    company: "Company Name",
     image: speaker2,
-    bio: "Leading VC investor with $2B+ in portfolio companies. Champion of student entrepreneurship."
+    bio: "Brief description of the speaker's background and expertise."
   },
   {
-    name: "Dr. Elizabeth Harper",
-    title: "Chief Innovation Officer",
-    company: "Global Dynamics Corp",
+    name: "Speaker Name 3",
+    title: "Job Title",
+    company: "Company Name",
     image: speaker3,
-    bio: "Former startup founder turned corporate innovator. Expert in digital transformation."
+    bio: "Brief description of the speaker's background and expertise."
   }
 ];
 
@@ -40,11 +40,10 @@ const Speakers = () => {
           className={`text-center mb-16 scroll-fade-in ${titleVisible ? 'visible' : ''}`}
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
-            Learn From Industry Leaders
+            Our Speakers
           </h2>
           <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Our speakers are the entrepreneurs, founders, and executives who are shaping the future of business. 
-            Get inspired by their journeys and learn the mindset that drives success.
+            Description of your speaker program. Edit this to describe the types of speakers you host and what attendees can expect to learn.
           </p>
         </div>
         

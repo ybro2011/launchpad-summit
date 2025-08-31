@@ -6,7 +6,7 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <h1 className="font-display text-2xl font-bold text-primary">Launchpad Summit</h1>
+            <h1 className="font-display text-2xl font-bold text-primary">Your Society Name</h1>
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
@@ -57,7 +57,7 @@ const Header = () => {
           </nav>
           
           <Button variant="primary" size="sm" className="shadow-elegant">
-            Join Society
+            Call to Action
           </Button>
         </div>
       </div>

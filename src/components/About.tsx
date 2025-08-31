@@ -14,11 +14,10 @@ const About = () => {
             className={`text-center mb-16 scroll-fade-in ${titleVisible ? 'visible' : ''}`}
           >
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
-              Our Mission
+              About Section Title
             </h2>
             <p className="font-body text-xl text-muted-foreground leading-relaxed">
-              We bridge the gap between academic learning and real-world entrepreneurship by connecting 
-              ambitious students with industry leaders who've built tomorrow's most innovative companies.
+              Your society description goes here. Edit this text to explain your mission and what makes your organization unique.
             </p>
           </div>
           
@@ -34,25 +33,25 @@ const About = () => {
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <p className="font-body text-muted-foreground">
-                    Host exclusive talks with successful entrepreneurs, founders, and C-suite executives
+                    First key activity or service your society provides
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <p className="font-body text-muted-foreground">
-                    Organize hands-on workshops covering startup fundamentals and business strategy
+                    Second key activity or service your society provides
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <p className="font-body text-muted-foreground">
-                    Create networking opportunities between students and industry professionals
+                    Third key activity or service your society provides
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <p className="font-body text-muted-foreground">
-                    Support student-led ventures through mentorship and resources
+                    Fourth key activity or service your society provides
                   </p>
                 </div>
               </div>
@@ -64,11 +63,10 @@ const About = () => {
             >
               <div className="bg-gradient-subtle rounded-lg p-8 shadow-elegant">
                 <blockquote className="font-display text-2xl text-primary italic mb-4 leading-relaxed">
-                  "The entrepreneurial mindset isn't just about starting companies—it's about solving problems, 
-                  creating value, and having the courage to make bold decisions."
+                  "Your inspirational quote or mission statement goes here. This should capture the essence of your society's vision."
                 </blockquote>
                 <cite className="font-body text-muted-foreground">
-                  — Society Mission Statement
+                  — Quote Attribution
                 </cite>
               </div>
             </div>

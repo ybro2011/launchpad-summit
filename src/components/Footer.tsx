@@ -4,9 +4,9 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-display text-2xl font-bold mb-4">Launchpad Summit</h3>
+            <h3 className="font-display text-2xl font-bold mb-4">Your Society Name</h3>
             <p className="font-body text-primary-foreground/80 leading-relaxed">
-              Connecting ambitious students with industry leaders to build the entrepreneurial mindset for tomorrow's innovators.
+              Your society description goes here. Edit this text to describe your mission and what you do.
             </p>
           </div>
           
@@ -23,17 +23,17 @@ const Footer = () => {
           <div>
             <h4 className="font-body font-semibold text-lg mb-4">Contact</h4>
             <p className="font-body text-primary-foreground/80 mb-2">
-              Email: hello@launchpadsummit.org
+              Email: your-email@example.com
             </p>
             <p className="font-body text-primary-foreground/80">
-              Follow us for updates and event announcements
+              Your contact information and social media
             </p>
           </div>
         </div>
         
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="font-body text-primary-foreground/60 text-sm">
-            © 2024 Launchpad Summit Society. All rights reserved.
+            © 2024 Your Society Name. All rights reserved.
           </p>
         </div>
       </div>

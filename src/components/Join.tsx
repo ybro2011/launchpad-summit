@@ -6,23 +6,23 @@ import { Mail, Users, Calendar, Star } from "lucide-react";
 const benefits = [
   {
     icon: Users,
-    title: "Exclusive Network",
-    description: "Connect with like-minded students and industry professionals"
+    title: "Benefit 1",
+    description: "Description of the first benefit members receive"
   },
   {
     icon: Calendar,
-    title: "Premium Events",
-    description: "Priority access to all talks, workshops, and networking events"
+    title: "Benefit 2",
+    description: "Description of the second benefit members receive"
   },
   {
     icon: Star,
-    title: "Mentorship",
-    description: "Get matched with successful entrepreneurs for one-on-one guidance"
+    title: "Benefit 3",
+    description: "Description of the third benefit members receive"
   },
   {
     icon: Mail,
-    title: "Resources",
-    description: "Access to exclusive content, templates, and startup resources"
+    title: "Benefit 4",
+    description: "Description of the fourth benefit members receive"
   }
 ];
 
@@ -40,11 +40,10 @@ const Join = () => {
             className={`mb-16 scroll-fade-in ${titleVisible ? 'visible' : ''}`}
           >
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
-              Ready to Join?
+              Join Section Title
             </h2>
             <p className="font-body text-xl text-muted-foreground leading-relaxed mb-8">
-              Become part of a community that's shaping the next generation of business leaders. 
-              Join hundreds of ambitious students already building their entrepreneurial future.
+              Your call-to-action description goes here. Edit this to encourage visitors to join your society and explain the benefits.
             </p>
           </div>
           
@@ -72,18 +71,18 @@ const Join = () => {
             className={`scroll-fade-in ${ctaVisible ? 'visible' : ''}`}
           >
             <Button variant="primary" size="lg" className="shadow-glow mr-4 mb-4">
-              Join Our Society
+              Primary Action
             </Button>
             <Button variant="outline" size="lg" className="mb-4">
-              Learn More
+              Secondary Action
             </Button>
             
             <div className="mt-8 p-6 bg-white/60 backdrop-blur-sm rounded-lg border border-primary/20">
               <p className="font-body text-muted-foreground mb-2">
-                <strong className="text-primary">Next Event:</strong> Startup Pitch Night • March 15, 2024
+                <strong className="text-primary">Next Event:</strong> Event Name • Event Date
               </p>
               <p className="font-body text-sm text-muted-foreground">
-                Join us for an exciting evening of student pitches and networking with investors
+                Brief description of your next upcoming event
               </p>
             </div>
           </div>

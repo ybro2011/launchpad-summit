@@ -18,20 +18,20 @@ const Hero = () => {
       <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
         <div className="animate-fade-in">
           <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Shape the
-            <span className="block text-primary-glow">Future of Business</span>
+            Your Main
+            <span className="block text-primary-glow">Headline Here</span>
           </h1>
           
           <p className="font-body text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed">
-            Connect with industry titans, learn from successful entrepreneurs, and build the mindset to become tomorrow's leaders.
+            Your compelling description goes here. Edit this text to describe your society's mission and value proposition.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
             <Button variant="hero" size="lg" className="shadow-glow">
-              Join Our Society
+              Primary Action
             </Button>
             <Button variant="outline-hero" size="lg">
-              View Events
+              Secondary Action
             </Button>
           </div>
         </div>
@@ -40,7 +40,7 @@ const Hero = () => {
         <div className="absolute -left-20 top-1/4 hidden lg:block animate-float">
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-sm">
             <p className="font-display text-2xl text-white/80 italic">
-              "Be part of inventing the future"
+              "Your inspirational quote here"
             </p>
           </div>
         </div>

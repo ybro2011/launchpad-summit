@@ -5,31 +5,31 @@ import { Calendar, MapPin, Users } from "lucide-react";
 
 const events = [
   {
-    title: "Startup Pitch Night",
-    date: "March 15, 2024",
-    time: "6:00 PM - 9:00 PM",
-    location: "University Auditorium",
-    attendees: "200+",
-    description: "Watch student entrepreneurs pitch their ideas to a panel of industry experts and VCs.",
-    type: "Competition"
+    title: "Event Title 1",
+    date: "Event Date",
+    time: "Event Time",
+    location: "Event Location",
+    attendees: "Expected Attendees",
+    description: "Brief description of what this event is about and what participants can expect.",
+    type: "Event Type"
   },
   {
-    title: "Founder's Fireside Chat",
-    date: "March 28, 2024", 
-    time: "7:00 PM - 8:30 PM",
-    location: "Business School Amphitheater",
-    attendees: "150+",
-    description: "Intimate conversation with Sarah Chen about her journey from student to successful CEO.",
-    type: "Talk"
+    title: "Event Title 2",
+    date: "Event Date", 
+    time: "Event Time",
+    location: "Event Location",
+    attendees: "Expected Attendees",
+    description: "Brief description of what this event is about and what participants can expect.",
+    type: "Event Type"
   },
   {
-    title: "Innovation Workshop",
-    date: "April 10, 2024",
-    time: "2:00 PM - 5:00 PM", 
-    location: "Innovation Lab",
-    attendees: "50",
-    description: "Hands-on workshop on design thinking and rapid prototyping for entrepreneurs.",
-    type: "Workshop"
+    title: "Event Title 3",
+    date: "Event Date",
+    time: "Event Time", 
+    location: "Event Location",
+    attendees: "Expected Attendees",
+    description: "Brief description of what this event is about and what participants can expect.",
+    type: "Event Type"
   }
 ];
 
@@ -48,8 +48,7 @@ const Events = () => {
             Upcoming Events
           </h2>
           <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Join us for inspiring talks, hands-on workshops, and networking opportunities 
-            that will accelerate your entrepreneurial journey.
+            Description of your events program. Edit this to describe the types of events you organize and their benefits.
           </p>
         </div>
         
