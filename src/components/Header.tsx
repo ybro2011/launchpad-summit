@@ -1,0 +1,36 @@
+import { Button } from "@/components/ui/button";
+
+const Header = () => {
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <h1 className="font-display text-2xl font-bold text-primary">Launchpad Summit</h1>
+          </div>
+          
+          <nav className="hidden md:flex items-center space-x-8">
+            <a href="#about" className="font-body text-foreground hover:text-primary transition-colors duration-200">
+              About
+            </a>
+            <a href="#speakers" className="font-body text-foreground hover:text-primary transition-colors duration-200">
+              Speakers
+            </a>
+            <a href="#events" className="font-body text-foreground hover:text-primary transition-colors duration-200">
+              Events
+            </a>
+            <a href="#join" className="font-body text-foreground hover:text-primary transition-colors duration-200">
+              Join
+            </a>
+          </nav>
+          
+          <Button variant="primary" size="sm" className="shadow-elegant">
+            Join Society
+          </Button>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
