@@ -33,25 +33,25 @@ const About = () => {
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <p className="font-body text-muted-foreground">
-                    First key activity or service your society provides
+                    <span className="font-semibold text-primary">Inspiring Talks</span> – Guest speakers from business, academia, and entrepreneurship
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <p className="font-body text-muted-foreground">
-                    Second key activity or service your society provides
+                    <span className="font-semibold text-primary">Student Opportunities</span> – Learn directly from leaders shaping the future
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <p className="font-body text-muted-foreground">
-                    Third key activity or service your society provides
+                    <span className="font-semibold text-primary">Livestream Access</span> – Bringing every talk to a wider online audience
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <p className="font-body text-muted-foreground">
-                    Fourth key activity or service your society provides
+                    <span className="font-semibold text-primary">Building Connections</span> – Linking students with universities and companies
                   </p>
                 </div>
               </div>
