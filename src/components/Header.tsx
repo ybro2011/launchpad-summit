@@ -1,6 +1,26 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname === '/') {
+      // Already on home page, just scroll
+      document.getElementById(sectionId)?.scrollIntoView({
+        behavior: 'smooth'
+      });
+    } else {
+      // Navigate to home page first, then scroll
+      navigate('/');
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+  };
+
   return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -9,20 +29,16 @@ const Header = () => {
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#about" className="font-body font-light text-foreground hover:text-primary transition-colors duration-200 relative group" onClick={e => {
+            <a href="#about" className="font-body font-light text-foreground hover:text-primary transition-colors duration-200 relative group cursor-pointer" onClick={e => {
             e.preventDefault();
-            document.getElementById('about')?.scrollIntoView({
-              behavior: 'smooth'
-            });
+            scrollToSection('about');
           }}>
               About
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
             </a>
-            <a href="#speakers" className="font-body font-light text-foreground hover:text-primary transition-colors duration-200 relative group" onClick={e => {
+            <a href="#speakers" className="font-body font-light text-foreground hover:text-primary transition-colors duration-200 relative group cursor-pointer" onClick={e => {
             e.preventDefault();
-            document.getElementById('speakers')?.scrollIntoView({
-              behavior: 'smooth'
-            });
+            scrollToSection('speakers');
           }}>
               Speakers
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
@@ -31,11 +47,9 @@ const Header = () => {
               All Events
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
             </Link>
-            <a href="#join" className="font-body font-light text-foreground hover:text-primary transition-colors duration-200 relative group" onClick={e => {
+            <a href="#join" className="font-body font-light text-foreground hover:text-primary transition-colors duration-200 relative group cursor-pointer" onClick={e => {
             e.preventDefault();
-            document.getElementById('join')?.scrollIntoView({
-              behavior: 'smooth'
-            });
+            scrollToSection('join');
           }}>
               Join
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
