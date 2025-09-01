@@ -6,12 +6,18 @@ import Speakers from "@/components/Speakers";
 import Events from "@/components/Events";
 import Join from "@/components/Join";
 import Footer from "@/components/Footer";
+import CurvedSeparator from "@/components/CurvedSeparator";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
+      <CurvedSeparator 
+        fromColor="hsl(280 85% 50%)" 
+        toColor="hsl(0 0% 100%)" 
+        direction="down" 
+      />
       <About />
       <Speakers />
       <Events />
