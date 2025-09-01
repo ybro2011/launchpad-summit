@@ -14,12 +14,6 @@ const Index = () => {
       <Header />
       <Hero />
       <About />
-      <CurvedSeparator 
-        fromColor="hsl(0 0% 100%)" 
-        toColor="hsla(260, 10%, 96%, 0.6)"
-        direction="down"
-        className="h-32"
-      />
       <Speakers />
       <CurvedSeparator 
         fromColor="hsla(260, 10%, 96%, 0.6)" 
