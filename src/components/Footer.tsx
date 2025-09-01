@@ -6,7 +6,7 @@ const Footer = () => {
           <div>
             <h3 className="font-display text-2xl font-bold mb-4">Your Society Name</h3>
             <p className="font-body text-primary-foreground/80 leading-relaxed">
-              Your society description goes here. Edit this text to describe your mission and what you do.
+              We are a student society that connects members with inspiring innovators, experts, and industry leaders. We host events and workshops to help students gain insights, develop skills, and grow their confidence while learning from real-world experiences.
             </p>
           </div>
           
