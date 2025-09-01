@@ -71,7 +71,7 @@ const Join = () => {
             className={`scroll-fade-in ${ctaVisible ? 'visible' : ''}`}
           >
             <Button variant="primary" size="lg" className="shadow-glow mr-4 mb-4">
-              Primary Action
+              Join Now
             </Button>
             <Button variant="outline" size="lg" className="mb-4">
               Secondary Action
