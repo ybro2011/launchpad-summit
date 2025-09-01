@@ -3,11 +3,7 @@ import heroBackground from "@/assets/hero-background.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" 
-      style={{
-        clipPath: 'polygon(0% 0%, 0% 83.3%, 16.7% 91.7%, 33.3% 83.3%, 50% 91.7%, 66.7% 83.3%, 83.3% 91.7%, 100% 83.3%, 100% 0%)'
-      }}
-    >
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
@@ -16,6 +12,20 @@ const Hero = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 gradient-hero opacity-80"></div>
+      </div>
+      
+      {/* Curved bottom edge */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+        <svg
+          className="relative block w-full h-24"
+          viewBox="0 0 1200 200"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,200 C200,50 400,150 600,100 C800,50 1000,150 1200,100 L1200,200 L0,200 Z"
+            fill="white"
+          />
+        </svg>
       </div>
       
       {/* Content */}
