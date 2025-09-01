@@ -1,29 +1,24 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import speaker1 from "@/assets/speaker-1.jpg";
-import speaker2 from "@/assets/speaker-2.jpg";
-import speaker3 from "@/assets/speaker-3.jpg";
+import { User } from "lucide-react";
 
 const speakers = [
   {
     name: "Speaker Name 1",
     title: "Job Title",
     company: "Company Name",
-    image: speaker1,
     bio: "Brief description of the speaker's background and expertise."
   },
   {
     name: "Speaker Name 2",
     title: "Job Title",
     company: "Company Name",
-    image: speaker2,
     bio: "Brief description of the speaker's background and expertise."
   },
   {
     name: "Speaker Name 3",
     title: "Job Title",
     company: "Company Name",
-    image: speaker3,
     bio: "Brief description of the speaker's background and expertise."
   }
 ];
@@ -55,11 +50,9 @@ const Speakers = () => {
             <Card key={speaker.name} className={`group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-0 bg-white/80 backdrop-blur-sm scroll-fade-in stagger-${index + 1} ${cardsVisible ? 'visible' : ''}`}>
               <CardContent className="p-6">
                 <div className="relative mb-6">
-                  <img
-                    src={speaker.image}
-                    alt={speaker.name}
-                    className="w-24 h-24 rounded-full mx-auto object-cover shadow-elegant"
-                  />
+                  <div className="w-24 h-24 rounded-full mx-auto bg-muted flex items-center justify-center shadow-elegant">
+                    <User className="w-10 h-10 text-muted-foreground" />
+                  </div>
                   <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                 </div>
                 
