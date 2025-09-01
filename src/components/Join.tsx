@@ -4,8 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useAuth } from "@/hooks/useAuth";
-import AuthModal from "@/components/AuthModal";
 import { Mail, Users, Calendar, Star } from "lucide-react";
+import AuthDialog from "@/components/auth/AuthDialog";
 
 const benefits = [
   {
@@ -34,8 +34,7 @@ const Join = () => {
   const [titleRef, titleVisible] = useScrollAnimation(0.2);
   const [benefitsRef, benefitsVisible] = useScrollAnimation(0.1);
   const [ctaRef, ctaVisible] = useScrollAnimation(0.3);
-  const [authModalOpen, setAuthModalOpen] = useState(false);
-  
+  const [authDialogOpen, setAuthDialogOpen] = useState(false);
   const { user, signOut } = useAuth();
 
   return (
@@ -93,7 +92,7 @@ const Join = () => {
                 variant="primary" 
                 size="lg" 
                 className="shadow-glow mr-4 mb-4"
-                onClick={() => setAuthModalOpen(true)}
+                onClick={() => setAuthDialogOpen(true)}
               >
                 Join Now
               </Button>
@@ -116,9 +115,9 @@ const Join = () => {
         </div>
       </div>
       
-      <AuthModal 
-        open={authModalOpen} 
-        onOpenChange={setAuthModalOpen} 
+      <AuthDialog 
+        open={authDialogOpen} 
+        onOpenChange={setAuthDialogOpen} 
       />
     </section>
   );
