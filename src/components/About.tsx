@@ -6,7 +6,7 @@ const About = () => {
   const [quoteRef, quoteVisible] = useScrollAnimation(0.3);
 
   return (
-    <section id="about" className="py-20 bg-background section-connector">
+    <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div 
