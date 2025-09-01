@@ -74,7 +74,7 @@ const Join = () => {
               Join Now
             </Button>
             <Button variant="outline" size="lg" className="mb-4">
-              Secondary Action
+              Join Now
             </Button>
             
             <div className="mt-8 p-6 bg-white/60 backdrop-blur-sm rounded-lg border border-primary/20">
