@@ -16,8 +16,8 @@ const CurvedSeparator = ({
   const uniqueId = Math.random().toString(36).substr(2, 9);
   
   const pathData = direction === 'up' 
-    ? 'M0,200 C200,50 400,150 600,100 C800,50 1000,150 1200,100 L1200,0 L0,0 Z'
-    : 'M0,0 C200,150 400,50 600,100 C800,150 1000,50 1200,100 L1200,200 L0,200 Z';
+    ? 'M0,200 C200,20 400,180 600,80 C800,20 1000,180 1200,80 L1200,0 L0,0 Z'
+    : 'M0,0 C200,180 400,20 600,120 C800,180 1000,20 1200,120 L1200,200 L0,200 Z';
   
   const svgMask = `<svg viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg"><path d="${pathData}" fill="white"/></svg>`;
   const maskUrl = `url("data:image/svg+xml,${encodeURIComponent(svgMask)}")`;
@@ -58,12 +58,12 @@ const CurvedSeparator = ({
           
           {direction === 'down' ? (
             <path
-              d="M0,0 C200,150 400,50 600,100 C800,150 1000,50 1200,100 L1200,200 L0,200 Z"
+              d="M0,0 C200,180 400,20 600,120 C800,180 1000,20 1200,120 L1200,200 L0,200 Z"
               fill={`url(#gradient-${uniqueId})`}
             />
           ) : (
             <path
-              d="M0,200 C200,50 400,150 600,100 C800,50 1000,150 1200,100 L1200,0 L0,0 Z"
+              d="M0,200 C200,20 400,180 600,80 C800,20 1000,180 1200,80 L1200,0 L0,0 Z"
               fill={`url(#gradient-${uniqueId})`}
             />
           )}
