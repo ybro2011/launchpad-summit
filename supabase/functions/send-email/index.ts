@@ -47,7 +47,10 @@ async function verifySignature(payload: string, signature: string, secret: strin
 }
 
 Deno.serve(async (req) => {
+  console.log('=== Edge Function Started ===')
+  
   if (req.method !== 'POST') {
+    console.log('Method not allowed:', req.method)
     return new Response('Method not allowed', { status: 405 })
   }
 
@@ -70,37 +73,43 @@ Deno.serve(async (req) => {
     )
   }
   
-  const payload = await req.text()
-  const signature = req.headers.get('webhook-signature') || req.headers.get('x-webhook-signature') || ''
-  
-  console.log('Webhook signature received:', signature ? 'Yes' : 'No')
-  
-  // For now, let's skip signature verification to debug the issue
-  // if (!signature || !(await verifySignature(payload, signature, hookSecret))) {
-  //   console.error('Invalid webhook signature')
-  //   return new Response('Unauthorized', { status: 401 })
-  // }
-  
   try {
-    const webhookData = JSON.parse(payload)
-    console.log('Webhook data keys:', Object.keys(webhookData))
+    console.log('Reading request payload...')
+    const payload = await req.text()
+    console.log('Payload length:', payload.length)
+    console.log('Raw payload:', payload.substring(0, 200) + '...')
     
-    const {
-      user,
-      email_data: { token, token_hash, redirect_to, email_action_type },
-    } = webhookData as {
-      user: {
-        email: string
-        email_confirmed_at?: string
-      }
-      email_data: {
-        token: string
-        token_hash: string
-        redirect_to: string
-        email_action_type: string
-        site_url: string
-      }
+    const signature = req.headers.get('webhook-signature') || req.headers.get('x-webhook-signature') || ''
+    console.log('Webhook signature received:', signature ? 'Yes' : 'No')
+    console.log('All headers:', Object.fromEntries(req.headers.entries()))
+    
+    let webhookData
+    try {
+      webhookData = JSON.parse(payload)
+      console.log('Successfully parsed JSON')
+      console.log('Webhook data keys:', Object.keys(webhookData))
+    } catch (parseError) {
+      console.error('JSON parse error:', parseError)
+      return new Response(
+        JSON.stringify({ error: { message: 'Invalid JSON payload' } }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      )
     }
+    
+    console.log('Extracting webhook data...')
+    const user = webhookData.user
+    const email_data = webhookData.email_data
+    
+    if (!user || !email_data) {
+      console.error('Missing required data. User:', !!user, 'Email data:', !!email_data)
+      console.error('Full webhook data:', JSON.stringify(webhookData, null, 2))
+      return new Response(
+        JSON.stringify({ error: { message: 'Missing required webhook data' } }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      )
+    }
+    
+    const { token, token_hash, redirect_to, email_action_type } = email_data
 
     console.log('Processing email for action:', email_action_type)
 
