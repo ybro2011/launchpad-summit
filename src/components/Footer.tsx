@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-display text-2xl font-bold mb-4">Your Society Name</h3>
+            <h3 className="font-display text-2xl font-bold mb-4">Society Name</h3>
             <p className="font-body text-primary-foreground/80 leading-relaxed">
               We are a student society that connects members with inspiring innovators, experts, and industry leaders. We host events and workshops to help students gain insights, develop skills, and grow their confidence while learning from real-world experiences.
             </p>
@@ -33,7 +33,7 @@ const Footer = () => {
         
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="font-body text-primary-foreground/60 text-sm">
-            © 2024 Your Society Name. All rights reserved.
+            © 2024 Society Name. All rights reserved.
           </p>
         </div>
       </div>
