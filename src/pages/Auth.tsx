@@ -24,11 +24,54 @@ const Auth = () => {
   const { toast } = useToast();
 
   useEffect(() => {
+    // Handle auth errors from URL fragments
+    const handleAuthError = () => {
+      const hash = window.location.hash;
+      if (hash.includes('error=')) {
+        const urlParams = new URLSearchParams(hash.substring(1));
+        const error = urlParams.get('error');
+        const errorDescription = urlParams.get('error_description');
+        
+        if (error === 'access_denied' && errorDescription?.includes('expired')) {
+          toast({
+            title: "Reset link expired",
+            description: "The password reset link has expired. Please request a new one.",
+            variant: "destructive"
+          });
+        } else if (errorDescription) {
+          toast({
+            title: "Authentication error",
+            description: decodeURIComponent(errorDescription),
+            variant: "destructive"
+          });
+        }
+        
+        // Clear the error from URL
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    };
+
+    // Check for auth state changes (including password reset)
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'PASSWORD_RECOVERY') {
+        setIsResetMode(true);
+        toast({
+          title: "Ready to reset",
+          description: "You can now set your new password."
+        });
+      } else if (event === 'SIGNED_IN' && session) {
+        navigate('/');
+      }
+    });
+
     // Check if we're in password reset mode
     const mode = searchParams.get('mode');
     if (mode === 'reset') {
       setIsResetMode(true);
     }
+
+    // Handle auth errors
+    handleAuthError();
 
     // Check if user is already logged in
     const checkUser = async () => {
@@ -38,7 +81,9 @@ const Auth = () => {
       }
     };
     checkUser();
-  }, [navigate, searchParams, isResetMode]);
+
+    return () => subscription.unsubscribe();
+  }, [navigate, searchParams, isResetMode, toast]);
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -144,7 +189,7 @@ const Auth = () => {
     setResetLoading(true);
 
     try {
-      const redirectUrl = `${window.location.origin}/auth?mode=reset`;
+      const redirectUrl = `${window.location.origin}/auth`;
       
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
         redirectTo: redirectUrl
