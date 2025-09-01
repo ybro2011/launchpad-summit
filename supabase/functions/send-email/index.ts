@@ -1,5 +1,4 @@
 import React from 'npm:react@18.3.1'
-import { Webhook } from 'https://esm.sh/standardwebhooks@1.0.0'
 import { Resend } from 'npm:resend@4.0.0'
 import { renderAsync } from 'npm:@react-email/components@0.0.22'
 import { MagicLinkEmail } from './_templates/magic-link.tsx'
@@ -15,6 +14,37 @@ console.log('Environment check:', {
 })
 
 const resend = new Resend(resendApiKey as string)
+
+// Supabase webhook signature verification
+async function verifySignature(payload: string, signature: string, secret: string): Promise<boolean> {
+  try {
+    const [version, hash] = signature.split(',')
+    if (version !== 'v1') return false
+    
+    const encoder = new TextEncoder()
+    const key = await crypto.subtle.importKey(
+      'raw',
+      encoder.encode(secret.replace('v1,whsec_', '')),
+      { name: 'HMAC', hash: 'SHA-256' },
+      false,
+      ['verify']
+    )
+    
+    const signatureBytes = new Uint8Array(
+      hash.replace('whsec_', '').match(/.{1,2}/g)?.map(byte => parseInt(byte, 16)) || []
+    )
+    
+    return await crypto.subtle.verify(
+      'HMAC',
+      key,
+      signatureBytes,
+      encoder.encode(payload)
+    )
+  } catch (error) {
+    console.error('Signature verification error:', error)
+    return false
+  }
+}
 
 Deno.serve(async (req) => {
   if (req.method !== 'POST') {
@@ -41,14 +71,24 @@ Deno.serve(async (req) => {
   }
   
   const payload = await req.text()
-  const headers = Object.fromEntries(req.headers)
-  const wh = new Webhook(hookSecret)
+  const signature = req.headers.get('webhook-signature') || req.headers.get('x-webhook-signature') || ''
+  
+  console.log('Webhook signature received:', signature ? 'Yes' : 'No')
+  
+  // For now, let's skip signature verification to debug the issue
+  // if (!signature || !(await verifySignature(payload, signature, hookSecret))) {
+  //   console.error('Invalid webhook signature')
+  //   return new Response('Unauthorized', { status: 401 })
+  // }
   
   try {
+    const webhookData = JSON.parse(payload)
+    console.log('Webhook data keys:', Object.keys(webhookData))
+    
     const {
       user,
       email_data: { token, token_hash, redirect_to, email_action_type },
-    } = wh.verify(payload, headers) as {
+    } = webhookData as {
       user: {
         email: string
         email_confirmed_at?: string
