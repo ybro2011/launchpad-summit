@@ -21,6 +21,12 @@ const Index = () => {
         className="h-32"
       />
       <Speakers />
+      <CurvedSeparator 
+        fromColor="hsla(260, 10%, 96%, 0.6)" 
+        toColor="hsl(0 0% 100%)"
+        direction="up"
+        className="h-32"
+      />
       <Events />
       <Join />
       <Footer />
