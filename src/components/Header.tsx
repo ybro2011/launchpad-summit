@@ -56,9 +56,11 @@ const Header = () => {
             </a>
           </nav>
           
-          <Button variant="white-outline" size="sm" className="shadow-elegant">
-            Join Now
-          </Button>
+          <Link to="/events">
+            <Button variant="white-outline" size="sm" className="shadow-elegant">
+              Join Now
+            </Button>
+          </Link>
         </div>
       </div>
     </header>;
