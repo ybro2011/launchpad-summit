@@ -14,10 +14,10 @@ const About = () => {
             className={`text-center mb-16 scroll-fade-in ${titleVisible ? 'visible' : ''}`}
           >
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
-              About Section Title
+              About Us
             </h2>
             <p className="font-body text-xl text-muted-foreground leading-relaxed">
-              Your society description goes here. Edit this text to explain your mission and what makes your organization unique.
+              We are a student-led society at The Perse that brings in entrepreneurs, academics, and innovators to share their journeys. Our mission is to inspire students to think bigger, explore new ideas, and take action. Talks are hosted at school and livestreamed to reach a wider audience.
             </p>
           </div>
           
