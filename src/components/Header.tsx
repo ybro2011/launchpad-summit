@@ -12,7 +12,7 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <a 
               href="#about" 
-              className="font-body text-primary-glow hover:text-primary transition-colors duration-200 relative group"
+              className="font-body text-primary hover:text-primary-glow transition-colors duration-200 relative group"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
@@ -21,9 +21,10 @@ const Header = () => {
               About
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
             </a>
+            <div className="w-px h-4 bg-primary/30"></div>
             <a 
               href="#speakers" 
-              className="font-body text-primary-glow hover:text-primary transition-colors duration-200 relative group"
+              className="font-body text-primary hover:text-primary-glow transition-colors duration-200 relative group"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('speakers')?.scrollIntoView({ behavior: 'smooth' });
@@ -32,9 +33,10 @@ const Header = () => {
               Speakers
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
             </a>
+            <div className="w-px h-4 bg-primary/30"></div>
             <a 
               href="#events" 
-              className="font-body text-primary-glow hover:text-primary transition-colors duration-200 relative group"
+              className="font-body text-primary hover:text-primary-glow transition-colors duration-200 relative group"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' });
@@ -43,9 +45,10 @@ const Header = () => {
               Events
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
             </a>
+            <div className="w-px h-4 bg-primary/30"></div>
             <a 
               href="#join" 
-              className="font-body text-primary-glow hover:text-primary transition-colors duration-200 relative group"
+              className="font-body text-primary hover:text-primary-glow transition-colors duration-200 relative group"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('join')?.scrollIntoView({ behavior: 'smooth' });
