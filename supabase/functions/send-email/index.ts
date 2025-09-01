@@ -77,7 +77,7 @@ Deno.serve(async (req) => {
     }
 
     const { error } = await resend.emails.send({
-      from: 'TechTalks <noreply@yourdomain.com>', // Replace with your verified domain
+      from: 'TechTalks <onboarding@resend.dev>',
       to: [user.email],
       subject,
       html,
