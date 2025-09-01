@@ -33,7 +33,7 @@ const Speakers = () => {
   const [cardsRef, cardsVisible] = useScrollAnimation(0.1);
 
   return (
-    <section id="speakers" className="py-20 gradient-subtle section-connector">
+    <section id="speakers" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         <div 
           ref={titleRef}
