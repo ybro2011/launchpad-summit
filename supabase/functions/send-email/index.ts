@@ -23,6 +23,23 @@ Deno.serve(async (req) => {
 
   console.log('Received webhook request')
   
+  // Check if required secrets are available
+  if (!resendApiKey) {
+    console.error('RESEND_API_KEY is missing')
+    return new Response(
+      JSON.stringify({ error: { message: 'RESEND_API_KEY is missing' } }),
+      { status: 500, headers: { 'Content-Type': 'application/json' } }
+    )
+  }
+  
+  if (!hookSecret) {
+    console.error('SEND_EMAIL_HOOK_SECRET is missing')
+    return new Response(
+      JSON.stringify({ error: { message: 'SEND_EMAIL_HOOK_SECRET is missing' } }),
+      { status: 500, headers: { 'Content-Type': 'application/json' } }
+    )
+  }
+  
   const payload = await req.text()
   const headers = Object.fromEntries(req.headers)
   const wh = new Webhook(hookSecret)
