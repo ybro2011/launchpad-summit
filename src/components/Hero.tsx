@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Hero = () => {
@@ -44,9 +45,11 @@ const Hero = () => {
             <Button variant="hero" size="lg" className="shadow-glow">
               Join Us
             </Button>
-            <Button variant="outline-hero" size="lg" onClick={() => window.location.href = '/events'}>
-              See All Events
-            </Button>
+            <Link to="/events">
+              <Button variant="outline-hero" size="lg">
+                See All Events
+              </Button>
+            </Link>
           </div>
         </div>
         

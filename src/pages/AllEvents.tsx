@@ -1,7 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, MapPin, Users } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Calendar, Clock, MapPin, Users, ArrowLeft } from "lucide-react";
 
 const AllEvents = () => {
   const events = [
@@ -86,6 +87,10 @@ const AllEvents = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-background to-secondary/20">
         <div className="container mx-auto px-6">
+          <Link to="/" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-6">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Home
+          </Link>
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="font-display text-5xl md:text-6xl font-bold text-primary mb-6">
               All Events
