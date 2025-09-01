@@ -36,7 +36,7 @@ const Index = () => {
       />
       <Join />
       <CurvedSeparator 
-        fromColor="hsla(260, 10%, 96%, 0.6)" 
+        fromColor="hsl(260 85% 25%)" 
         toColor="hsl(260 85% 25%)"
         direction="down"
         className="h-32"
