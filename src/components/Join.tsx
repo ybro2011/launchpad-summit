@@ -16,8 +16,8 @@ const benefits = [
   },
   {
     icon: Star,
-    title: "Benefit 3",
-    description: "Description of the third benefit members receive"
+    title: "Learn from Leaders",
+    description: "Gain insights and knowledge from industry leaders"
   },
   {
     icon: Mail,
