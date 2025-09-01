@@ -6,6 +6,7 @@ import Speakers from "@/components/Speakers";
 import Events from "@/components/Events";
 import Join from "@/components/Join";
 import Footer from "@/components/Footer";
+import CurvedSeparator from "@/components/CurvedSeparator";
 
 const Index = () => {
   return (
@@ -13,6 +14,11 @@ const Index = () => {
       <Header />
       <Hero />
       <About />
+      <CurvedSeparator 
+        fromColor="hsl(0 0% 100%)" 
+        toColor="hsl(var(--muted))"
+        direction="down" 
+      />
       <Speakers />
       <Events />
       <Join />
