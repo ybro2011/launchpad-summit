@@ -4,19 +4,19 @@ import { User } from "lucide-react";
 
 const speakers = [
   {
-    name: "Speaker Name 1",
+    name: "Speaker 1",
     title: "Job Title",
     company: "Company Name",
     bio: "Brief description of the speaker's background and expertise."
   },
   {
-    name: "Speaker Name 2",
+    name: "Speaker 2",
     title: "Job Title",
     company: "Company Name",
     bio: "Brief description of the speaker's background and expertise."
   },
   {
-    name: "Speaker Name 3",
+    name: "Speaker 3",
     title: "Job Title",
     company: "Company Name",
     bio: "Brief description of the speaker's background and expertise."
