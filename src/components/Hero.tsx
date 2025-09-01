@@ -3,7 +3,11 @@ import heroBackground from "@/assets/hero-background.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" 
+      style={{
+        clipPath: 'polygon(0% 0%, 0% 83.3%, 16.7% 91.7%, 33.3% 83.3%, 50% 91.7%, 66.7% 83.3%, 83.3% 91.7%, 100% 83.3%, 100% 0%)'
+      }}
+    >
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 

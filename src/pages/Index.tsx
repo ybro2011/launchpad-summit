@@ -6,18 +6,12 @@ import Speakers from "@/components/Speakers";
 import Events from "@/components/Events";
 import Join from "@/components/Join";
 import Footer from "@/components/Footer";
-import CurvedSeparator from "@/components/CurvedSeparator";
-import heroBackground from "@/assets/hero-background.jpg";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
-      <CurvedSeparator 
-        backgroundImage={heroBackground}
-        direction="up" 
-      />
       <About />
       <Speakers />
       <Events />
