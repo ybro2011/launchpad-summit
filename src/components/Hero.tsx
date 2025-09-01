@@ -29,7 +29,7 @@ const Hero = () => {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto -mt-16">
         <div className="animate-fade-in">
           <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Your Main
@@ -62,7 +62,8 @@ const Hero = () => {
       
       {/* Scroll Indicator */}
       <div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer group"
+        className="absolute left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer group"
+        style={{ bottom: '8rem' }}
         onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
       >
         <div className="w-6 h-10 border-2 border-white/50 group-hover:border-white/80 rounded-full flex justify-center transition-colors duration-200">
