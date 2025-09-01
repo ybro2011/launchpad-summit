@@ -43,7 +43,7 @@ const Speakers = () => {
             Our Speakers
           </h2>
           <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Description of your speaker program. Edit this to describe the types of speakers you host and what attendees can expect to learn.
+            Our speakers are innovators, leaders, and experts who share insights and experiences to inspire students to think bigger, learn, and take meaningful action.
           </p>
         </div>
         
