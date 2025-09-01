@@ -1,3 +1,5 @@
+import { Instagram, Twitter, Linkedin } from "lucide-react";
+
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-12">
@@ -22,12 +24,32 @@ const Footer = () => {
           
           <div>
             <h4 className="font-body font-semibold text-lg mb-4">Contact</h4>
-            <p className="font-body text-primary-foreground/80 mb-2">
-              Email: your-email@example.com
+            <p className="font-body text-primary-foreground/80 mb-4">
+              Email: zzhang1@perse.co.uk
             </p>
-            <p className="font-body text-primary-foreground/80">
-              Your contact information and social media
-            </p>
+            <div className="flex space-x-4">
+              <a 
+                href="#" 
+                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                aria-label="X (Twitter)"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
         
