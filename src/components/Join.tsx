@@ -21,8 +21,8 @@ const benefits = [
   },
   {
     icon: Mail,
-    title: "Benefit 4",
-    description: "Description of the fourth benefit members receive"
+    title: "Newsletter Updates",
+    description: "Our newsletter with information on our latest talks"
   }
 ];
 
