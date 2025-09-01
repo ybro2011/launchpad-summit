@@ -49,21 +49,27 @@ const CurvedSeparator = ({
         >
           {direction === 'down' ? (
             <>
-              {/* Bottom area - fill entire space first */}
-              <rect x="0" y="0" width="1200" height="200" fill={toColor} />
-              {/* Top area - curved shape */}
+              {/* Top area with curved bottom */}
               <path
-                d="M0,0 C200,180 400,20 600,120 C800,180 1000,20 1200,120 L1200,0 L0,0 Z"
+                d="M0,0 L1200,0 L1200,120 C1000,20 800,180 600,120 C400,20 200,180 0,120 Z"
                 fill={fromColor}
+              />
+              {/* Bottom area with curved top */}
+              <path
+                d="M0,120 C200,180 400,20 600,120 C800,180 1000,20 1200,120 L1200,200 L0,200 Z"
+                fill={toColor}
               />
             </>
           ) : (
             <>
-              {/* Top area - fill entire space first */}
-              <rect x="0" y="0" width="1200" height="200" fill={fromColor} />
-              {/* Bottom area - curved shape */}
+              {/* Top area with curved bottom */}
               <path
-                d="M0,200 C200,20 400,180 600,80 C800,20 1000,180 1200,80 L1200,200 L0,200 Z"
+                d="M0,0 L1200,0 L1200,80 C1000,180 800,20 600,80 C400,180 200,20 0,80 Z"
+                fill={fromColor}
+              />
+              {/* Bottom area with curved top */}
+              <path
+                d="M0,80 C200,20 400,180 600,80 C800,20 1000,180 1200,80 L1200,200 L0,200 Z"
                 fill={toColor}
               />
             </>
