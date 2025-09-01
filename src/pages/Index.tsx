@@ -13,25 +13,25 @@ const Index = () => {
       <Header />
       <Hero />
       <CurvedSeparator 
-        fromColor="hsl(260 85% 25%)" 
-        toColor="hsl(var(--background))" 
+        fromColor="hsl(280 85% 50%)" 
+        toColor="hsl(0 0% 100%)" 
         direction="down" 
       />
       <About />
       <CurvedSeparator 
-        fromColor="hsl(var(--background))" 
+        fromColor="hsl(0 0% 100%)" 
         toColor="hsl(260 20% 98%)" 
         direction="up" 
       />
       <Speakers />
       <CurvedSeparator 
         fromColor="hsl(260 20% 98%)" 
-        toColor="hsl(var(--background))" 
+        toColor="hsl(0 0% 100%)" 
         direction="down" 
       />
       <Events />
       <CurvedSeparator 
-        fromColor="hsl(var(--background))" 
+        fromColor="hsl(0 0% 100%)" 
         toColor="hsl(260 20% 98%)" 
         direction="up" 
       />
