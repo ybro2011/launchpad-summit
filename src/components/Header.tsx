@@ -46,7 +46,7 @@ const Header = () => {
             </a>
           </nav>
           
-          <Button variant="primary" size="sm" className="shadow-elegant">
+          <Button variant="white-outline" size="sm" className="shadow-elegant">
             Call to Action
           </Button>
         </div>

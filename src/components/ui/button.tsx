@@ -13,6 +13,7 @@ const buttonVariants = cva(
         primary: "gradient-primary text-white hover:opacity-90 hover:shadow-glow font-semibold",
         hero: "gradient-primary text-white hover:opacity-90 hover:shadow-glow font-semibold px-8 py-3",
         "outline-hero": "border-2 border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white/50 backdrop-blur-sm font-semibold",
+        "white-outline": "border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white font-semibold",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
