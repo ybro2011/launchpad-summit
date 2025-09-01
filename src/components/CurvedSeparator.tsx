@@ -11,15 +11,17 @@ const CurvedSeparator = ({
   direction = 'down',
   className = ''
 }: CurvedSeparatorProps) => {
+  const uniqueId = Math.random().toString(36).substr(2, 9);
+  
   return (
-    <div className={`relative w-full h-16 overflow-hidden ${className}`}>
+    <div className={`relative w-full h-24 overflow-hidden ${className}`}>
       <svg
         className="absolute inset-0 w-full h-full"
-        viewBox="0 0 1200 120"
+        viewBox="0 0 1200 200"
         preserveAspectRatio="none"
       >
         <defs>
-          <linearGradient id={`gradient-${direction}`} x1="0%" y1="0%" x2="0%" y2="100%">
+          <linearGradient id={`gradient-${uniqueId}`} x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" style={{ stopColor: fromColor, stopOpacity: 1 }} />
             <stop offset="100%" style={{ stopColor: toColor, stopOpacity: 1 }} />
           </linearGradient>
@@ -27,13 +29,13 @@ const CurvedSeparator = ({
         
         {direction === 'down' ? (
           <path
-            d="M0,0 C150,120 350,0 600,60 C850,120 1050,0 1200,60 L1200,120 L0,120 Z"
-            fill={`url(#gradient-${direction})`}
+            d="M0,0 C200,150 400,50 600,100 C800,150 1000,50 1200,100 L1200,200 L0,200 Z"
+            fill={`url(#gradient-${uniqueId})`}
           />
         ) : (
           <path
-            d="M0,120 C150,0 350,120 600,60 C850,0 1050,120 1200,60 L1200,0 L0,0 Z"
-            fill={`url(#gradient-${direction})`}
+            d="M0,200 C200,50 400,150 600,100 C800,50 1000,150 1200,100 L1200,0 L0,0 Z"
+            fill={`url(#gradient-${uniqueId})`}
           />
         )}
       </svg>
