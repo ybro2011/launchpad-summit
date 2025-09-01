@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useAuth } from "@/hooks/useAuth";
+import AuthModal from "@/components/AuthModal";
 import { Mail, Users, Calendar, Star } from "lucide-react";
 
 const benefits = [
@@ -31,6 +34,9 @@ const Join = () => {
   const [titleRef, titleVisible] = useScrollAnimation(0.2);
   const [benefitsRef, benefitsVisible] = useScrollAnimation(0.1);
   const [ctaRef, ctaVisible] = useScrollAnimation(0.3);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  
+  const { user, signOut } = useAuth();
 
   return (
     <section id="join" className="py-20 bg-muted/60">
@@ -71,9 +77,27 @@ const Join = () => {
             ref={ctaRef}
             className={`scroll-fade-in ${ctaVisible ? 'visible' : ''}`}
           >
-            <Button variant="primary" size="lg" className="shadow-glow mr-4 mb-4">
-              Join Now
-            </Button>
+            {user ? (
+              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-4">
+                <div className="text-center">
+                  <p className="font-body text-primary mb-2">
+                    Welcome back, {user.user_metadata?.display_name || user.email}!
+                  </p>
+                  <Button variant="outline" size="lg" onClick={signOut} className="mr-4">
+                    Sign Out
+                  </Button>
+                </div>
+              </div>
+            ) : (
+              <Button 
+                variant="primary" 
+                size="lg" 
+                className="shadow-glow mr-4 mb-4"
+                onClick={() => setAuthModalOpen(true)}
+              >
+                Join Now
+              </Button>
+            )}
             <Link to="/events">
               <Button variant="outline" size="lg" className="mb-4">
                 All Events
@@ -91,6 +115,11 @@ const Join = () => {
           </div>
         </div>
       </div>
+      
+      <AuthModal 
+        open={authModalOpen} 
+        onOpenChange={setAuthModalOpen} 
+      />
     </section>
   );
 };
