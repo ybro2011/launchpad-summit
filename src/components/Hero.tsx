@@ -3,7 +3,7 @@ import heroBackground from "@/assets/hero-background.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: 'calc(100vh + 6rem)' }}>
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
@@ -15,7 +15,7 @@ const Hero = () => {
       </div>
       
       {/* Curved bottom edge */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+      <div className="absolute left-0 w-full overflow-hidden" style={{ bottom: '-1px' }}>
         <svg
           className="relative block w-full h-24"
           viewBox="0 0 1200 200"
