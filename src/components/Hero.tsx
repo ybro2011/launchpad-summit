@@ -32,8 +32,8 @@ const Hero = () => {
       <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto -mt-16">
         <div className="animate-fade-in">
           <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Where Ideas
-            <span className="block text-primary-glow">Meet Opportunity</span>
+            Where <span className="text-primary">Ideas</span>
+            <span className="block">Meet <span className="text-primary">Opportunity</span></span>
           </h1>
           
           <p className="font-body text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed">
