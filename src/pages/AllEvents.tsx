@@ -8,63 +8,63 @@ const AllEvents = () => {
   const events = [
     {
       id: 1,
-      title: "Startup Pitch Night",
-      date: "March 15, 2024",
-      time: "6:00 PM - 9:00 PM",
-      location: "Main Auditorium",
-      attendees: 150,
-      description: "Watch promising startups pitch their ideas to a panel of investors and industry experts.",
-      category: "Pitch Event"
+      title: "Event Title 1",
+      date: "Event Date",
+      time: "Event Time",
+      location: "Event Location",
+      attendees: "Expected Attendees",
+      description: "Brief description of what this event is about and what participants can expect.",
+      category: "Event Type"
     },
     {
       id: 2,
-      title: "AI in Business Workshop",
-      date: "March 22, 2024", 
-      time: "2:00 PM - 5:00 PM",
-      location: "Tech Lab",
-      attendees: 80,
-      description: "Hands-on workshop exploring practical applications of AI in modern business operations.",
-      category: "Workshop"
+      title: "Event Title 2",
+      date: "Event Date",
+      time: "Event Time",
+      location: "Event Location",
+      attendees: "Expected Attendees",
+      description: "Brief description of what this event is about and what participants can expect.",
+      category: "Event Type"
     },
     {
       id: 3,
-      title: "Founder Panel Discussion",
-      date: "March 29, 2024",
-      time: "7:00 PM - 8:30 PM", 
-      location: "Conference Room A",
-      attendees: 120,
-      description: "Hear from successful founders about their journey, challenges, and lessons learned.",
-      category: "Panel"
+      title: "Event Title 3",
+      date: "Event Date",
+      time: "Event Time",
+      location: "Event Location",
+      attendees: "Expected Attendees",
+      description: "Brief description of what this event is about and what participants can expect.",
+      category: "Event Type"
     },
     {
       id: 4,
-      title: "Networking Mixer",
-      date: "April 5, 2024",
-      time: "5:30 PM - 8:00 PM",
-      location: "Student Lounge",
-      attendees: 200,
-      description: "Connect with fellow students, entrepreneurs, and industry professionals in a casual setting.",
-      category: "Networking"
+      title: "Event Title 4",
+      date: "Event Date",
+      time: "Event Time",
+      location: "Event Location",
+      attendees: "Expected Attendees",
+      description: "Brief description of what this event is about and what participants can expect.",
+      category: "Event Type"
     },
     {
       id: 5,
-      title: "Digital Marketing Masterclass",
-      date: "April 12, 2024",
-      time: "1:00 PM - 4:00 PM",
-      location: "Media Center",
-      attendees: 90,
-      description: "Learn cutting-edge digital marketing strategies from industry leaders and practitioners.",
-      category: "Masterclass"
+      title: "Event Title 5",
+      date: "Event Date",
+      time: "Event Time",
+      location: "Event Location",
+      attendees: "Expected Attendees",
+      description: "Brief description of what this event is about and what participants can expect.",
+      category: "Event Type"
     },
     {
       id: 6,
-      title: "Investment & Finance Talk",
-      date: "April 19, 2024",
-      time: "6:30 PM - 8:00 PM",
-      location: "Business School Auditorium",
-      attendees: 160,
-      description: "Understanding venture capital, angel investment, and funding strategies for startups.",
-      category: "Talk"
+      title: "Event Title 6",
+      date: "Event Date",
+      time: "Event Time",
+      location: "Event Location",
+      attendees: "Expected Attendees",
+      description: "Brief description of what this event is about and what participants can expect.",
+      category: "Event Type"
     }
   ];
 
@@ -138,7 +138,7 @@ const AllEvents = () => {
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
                       <Users className="w-4 h-4 mr-2" />
-                      {event.attendees} attendees expected
+                      {event.attendees}
                     </div>
                   </div>
                   
