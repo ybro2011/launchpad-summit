@@ -37,7 +37,7 @@ const Hero = () => {
           </h1>
           
           <p className="font-body text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed">
-            Your compelling description goes here. Edit this text to describe your society's mission and value proposition.
+            A student-led society hosting talks with leaders from business, science, and beyond, streamed live from The Perse.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
