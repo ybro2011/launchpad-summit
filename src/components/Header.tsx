@@ -58,7 +58,7 @@ const Header = () => {
           
           <Link to="/events">
             <Button variant="white-outline" size="sm" className="shadow-elegant">
-              Join Now
+              joinnow
             </Button>
           </Link>
         </div>
