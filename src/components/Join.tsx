@@ -1,11 +1,9 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuthState } from "@/hooks/useAuthState";
 import { Mail, Users, Calendar, Star } from "lucide-react";
-import AuthDialog from "@/components/auth/AuthDialog";
 
 const benefits = [
   {
@@ -34,8 +32,7 @@ const Join = () => {
   const [titleRef, titleVisible] = useScrollAnimation(0.2);
   const [benefitsRef, benefitsVisible] = useScrollAnimation(0.1);
   const [ctaRef, ctaVisible] = useScrollAnimation(0.3);
-  const [authDialogOpen, setAuthDialogOpen] = useState(false);
-  const { user, signOut } = useAuth();
+  const { user, signOut, isAuthenticated } = useAuthState();
 
   return (
     <section id="join" className="py-20 bg-muted/60">
@@ -76,11 +73,11 @@ const Join = () => {
             ref={ctaRef}
             className={`scroll-fade-in ${ctaVisible ? 'visible' : ''}`}
           >
-            {user ? (
+            {isAuthenticated ? (
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-4">
                 <div className="text-center">
                   <p className="font-body text-primary mb-2">
-                    Welcome back, {user.user_metadata?.display_name || user.email}!
+                    Welcome back, {user?.user_metadata?.display_name || user?.email}!
                   </p>
                   <Button variant="outline" size="lg" onClick={signOut} className="mr-4">
                     Sign Out
@@ -88,14 +85,15 @@ const Join = () => {
                 </div>
               </div>
             ) : (
-              <Button 
-                variant="primary" 
-                size="lg" 
-                className="shadow-glow mr-4 mb-4"
-                onClick={() => setAuthDialogOpen(true)}
-              >
-                Join Now
-              </Button>
+              <Link to="/auth">
+                <Button 
+                  variant="primary" 
+                  size="lg" 
+                  className="shadow-glow mr-4 mb-4"
+                >
+                  Join Now
+                </Button>
+              </Link>
             )}
             <Link to="/events">
               <Button variant="outline" size="lg" className="mb-4">
@@ -114,11 +112,6 @@ const Join = () => {
           </div>
         </div>
       </div>
-      
-      <AuthDialog 
-        open={authDialogOpen} 
-        onOpenChange={setAuthDialogOpen} 
-      />
     </section>
   );
 };

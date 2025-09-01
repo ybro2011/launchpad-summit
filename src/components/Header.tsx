@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useAuthState } from "@/hooks/useAuthState";
+import { LogOut, User } from "lucide-react";
+
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { user, signOut, isAuthenticated } = useAuthState();
 
   const scrollToSection = (sectionId: string) => {
     if (location.pathname === '/') {
@@ -21,7 +25,13 @@ const Header = () => {
     }
   };
 
-  return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+  const handleSignOut = async () => {
+    await signOut();
+    navigate('/');
+  };
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
@@ -56,13 +66,35 @@ const Header = () => {
             </a>
           </nav>
           
-          <Link to="/events">
-            <Button variant="white-outline" size="sm" className="shadow-elegant">
-              joinnow
-            </Button>
-          </Link>
+          <div className="flex items-center space-x-3">
+            {isAuthenticated ? (
+              <>
+                <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                  <User className="w-4 h-4" />
+                  <span className="hidden sm:inline">{user?.email}</span>
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleSignOut}
+                  className="shadow-elegant"
+                >
+                  <LogOut className="w-4 h-4 mr-2" />
+                  Sign Out
+                </Button>
+              </>
+            ) : (
+              <Link to="/auth">
+                <Button variant="white-outline" size="sm" className="shadow-elegant">
+                  Sign In
+                </Button>
+              </Link>
+            )}
+          </div>
         </div>
       </div>
-    </header>;
+    </header>
+  );
 };
+
 export default Header;
