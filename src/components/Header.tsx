@@ -47,7 +47,7 @@ const Header = () => {
           </nav>
           
           <Button variant="white-outline" size="sm" className="shadow-elegant">
-            Call to Action
+            Join Now
           </Button>
         </div>
       </div>
