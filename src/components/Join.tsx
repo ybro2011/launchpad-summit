@@ -11,8 +11,8 @@ const benefits = [
   },
   {
     icon: Calendar,
-    title: "Benefit 2",
-    description: "Description of the second benefit members receive"
+    title: "Regular Expert Talks",
+    description: "Getting access to regular talks from experts"
   },
   {
     icon: Star,
