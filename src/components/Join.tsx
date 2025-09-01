@@ -32,14 +32,14 @@ const Join = () => {
   const [ctaRef, ctaVisible] = useScrollAnimation(0.3);
 
   return (
-    <section id="join" className="py-20 gradient-subtle">
+    <section id="join" className="py-20 bg-muted/60">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div 
             ref={titleRef}
             className={`mb-16 scroll-fade-in ${titleVisible ? 'visible' : ''}`}
           >
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-muted-foreground/70 mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
               Join Section Title
             </h2>
             <p className="font-body text-xl text-muted-foreground leading-relaxed mb-8">
