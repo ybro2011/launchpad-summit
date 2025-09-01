@@ -34,6 +34,7 @@ const Hero = () => {
           <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight text-primary-glow">
             Learn from Leaders.
             <span className="block">Think Bigger.</span>
+            <span className="block">Do More.</span>
           </h1>
           
           <p className="font-body text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed">
