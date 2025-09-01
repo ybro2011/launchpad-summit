@@ -47,25 +47,32 @@ const CurvedSeparator = ({
           viewBox="0 0 1200 200"
           preserveAspectRatio="none"
         >
-          <defs>
-            <linearGradient id={`gradient-${uniqueId}`} x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style={{ stopColor: fromColor, stopOpacity: 1 }} />
-              <stop offset="50%" style={{ stopColor: fromColor, stopOpacity: 1 }} />
-              <stop offset="50%" style={{ stopColor: toColor, stopOpacity: 1 }} />
-              <stop offset="100%" style={{ stopColor: toColor, stopOpacity: 1 }} />
-            </linearGradient>
-          </defs>
-          
           {direction === 'down' ? (
-            <path
-              d="M0,0 C200,180 400,20 600,120 C800,180 1000,20 1200,120 L1200,200 L0,200 Z"
-              fill={`url(#gradient-${uniqueId})`}
-            />
+            <>
+              {/* Top area - solid color */}
+              <path
+                d="M0,0 C200,180 400,20 600,120 C800,180 1000,20 1200,120 L1200,0 L0,0 Z"
+                fill={fromColor}
+              />
+              {/* Bottom area - solid color */}
+              <path
+                d="M0,200 L1200,200 L1200,120 C1000,20 800,180 600,120 C400,20 200,180 0,120 Z"
+                fill={toColor}
+              />
+            </>
           ) : (
-            <path
-              d="M0,200 C200,20 400,180 600,80 C800,20 1000,180 1200,80 L1200,0 L0,0 Z"
-              fill={`url(#gradient-${uniqueId})`}
-            />
+            <>
+              {/* Top area - solid color */}
+              <path
+                d="M0,0 L1200,0 L1200,80 C1000,180 800,20 600,80 C400,180 200,20 0,80 Z"
+                fill={fromColor}
+              />
+              {/* Bottom area - solid color */}
+              <path
+                d="M0,200 C200,20 400,180 600,80 C800,20 1000,180 1200,80 L1200,200 L0,200 Z"
+                fill={toColor}
+              />
+            </>
           )}
         </svg>
       )}
