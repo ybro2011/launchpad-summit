@@ -28,6 +28,12 @@ const Index = () => {
         className="h-32"
       />
       <Events />
+      <CurvedSeparator 
+        fromColor="hsl(0 0% 100%)" 
+        toColor="hsla(260, 10%, 96%, 0.6)"
+        direction="down"
+        className="h-32"
+      />
       <Join />
       <Footer />
     </div>
