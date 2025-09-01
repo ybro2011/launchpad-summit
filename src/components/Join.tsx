@@ -40,10 +40,10 @@ const Join = () => {
             className={`mb-16 scroll-fade-in ${titleVisible ? 'visible' : ''}`}
           >
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
-              Join Section Title
+              Join Us
             </h2>
             <p className="font-body text-xl text-muted-foreground leading-relaxed mb-8">
-              Your call-to-action description goes here. Edit this to encourage visitors to join your society and explain the benefits.
+              Be part of Learn from Leaders and discover new ideas, connect with inspiring speakers, and grow your skills alongside like-minded students.
             </p>
           </div>
           
