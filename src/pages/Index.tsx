@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Speakers from "@/components/Speakers";
 import Events from "@/components/Events";
 import Join from "@/components/Join";
+import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import CurvedSeparator from "@/components/CurvedSeparator";
 
@@ -36,7 +37,14 @@ const Index = () => {
       />
       <Join />
       <CurvedSeparator 
-        fromColor="hsl(260 8% 98%)" 
+        fromColor="hsla(260, 10%, 96%, 0.6)" 
+        toColor="hsl(260 10% 96% / 0.3)"
+        direction="up"
+        className="h-32"
+      />
+      <Newsletter />
+      <CurvedSeparator 
+        fromColor="hsl(260 10% 96% / 0.3)" 
         toColor="hsl(260 85% 25%)"
         direction="down"
         className="h-32"
