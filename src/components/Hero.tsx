@@ -53,14 +53,6 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Floating Quote */}
-        <div className="absolute -left-20 top-1/4 hidden lg:block animate-float">
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-sm">
-            <p className="font-display text-2xl text-white/80 italic">
-              "Your inspirational quote here"
-            </p>
-          </div>
-        </div>
       </div>
       
       {/* Scroll Indicator */}
