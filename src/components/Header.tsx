@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 const Header = () => {
   return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-6 py-4">
@@ -26,15 +27,10 @@ const Header = () => {
               Speakers
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
             </a>
-            <a href="#events" className="font-body font-light text-foreground hover:text-primary transition-colors duration-200 relative group" onClick={e => {
-            e.preventDefault();
-            document.getElementById('events')?.scrollIntoView({
-              behavior: 'smooth'
-            });
-          }}>
-              Events
+            <Link to="/events" className="font-body font-light text-foreground hover:text-primary transition-colors duration-200 relative group">
+              All Events
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
-            </a>
+            </Link>
             <a href="#join" className="font-body font-light text-foreground hover:text-primary transition-colors duration-200 relative group" onClick={e => {
             e.preventDefault();
             document.getElementById('join')?.scrollIntoView({
