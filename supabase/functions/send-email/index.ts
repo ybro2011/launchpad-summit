@@ -1,15 +1,9 @@
-import React from 'npm:react@18.3.1'
 import { Resend } from 'npm:resend@4.0.0'
-import { renderAsync } from 'npm:@react-email/components@0.0.22'
-import { MagicLinkEmail } from './_templates/magic-link.tsx'
-import { SignupConfirmationEmail } from './_templates/signup-confirmation.tsx'
 
 const resendApiKey = Deno.env.get('RESEND_API_KEY')
-const hookSecret = Deno.env.get('SEND_EMAIL_HOOK_SECRET')
 
-console.log('Environment check:', {
+console.log('Send-email function starting...', {
   hasResendKey: !!resendApiKey,
-  hasHookSecret: !!hookSecret,
 })
 
 const resend = new Resend(resendApiKey as string)
@@ -26,14 +20,6 @@ Deno.serve(async (req) => {
     console.error('RESEND_API_KEY is missing')
     return new Response(
       JSON.stringify({ error: { message: 'RESEND_API_KEY is missing' } }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
-    )
-  }
-  
-  if (!hookSecret) {
-    console.error('SEND_EMAIL_HOOK_SECRET is missing')
-    return new Response(
-      JSON.stringify({ error: { message: 'SEND_EMAIL_HOOK_SECRET is missing' } }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }
     )
   }
@@ -59,43 +45,34 @@ Deno.serve(async (req) => {
     const { token, token_hash, redirect_to, email_action_type } = email_data
     console.log('Processing email for action:', email_action_type)
 
+    const supabase_url = Deno.env.get('SUPABASE_URL') ?? ''
+    const confirmLink = `${supabase_url}/auth/v1/verify?token=${token_hash}&type=${email_action_type}&redirect_to=${redirect_to}`
+
     let html: string
     let subject: string
 
     if (email_action_type === 'signup') {
-      html = await renderAsync(
-        React.createElement(SignupConfirmationEmail, {
-          supabase_url: Deno.env.get('SUPABASE_URL') ?? '',
-          token,
-          token_hash,
-          redirect_to,
-          email_action_type,
-        })
-      )
       subject = 'Welcome! Please confirm your email'
+      html = `
+        <h1>Welcome!</h1>
+        <p>Thank you for signing up. Please confirm your email address by clicking the link below:</p>
+        <p><a href="${confirmLink}">Confirm your email address</a></p>
+        <p>Or copy and paste this code: ${token}</p>
+      `
     } else if (email_action_type === 'recovery') {
-      html = await renderAsync(
-        React.createElement(MagicLinkEmail, {
-          supabase_url: Deno.env.get('SUPABASE_URL') ?? '',
-          token,
-          token_hash,
-          redirect_to,
-          email_action_type,
-        })
-      )
       subject = 'Reset your password'
+      html = `
+        <h1>Reset your password</h1>
+        <p><a href="${confirmLink}">Click here to reset your password</a></p>
+        <p>Or copy and paste this code: ${token}</p>
+      `
     } else {
-      // Default magic link
-      html = await renderAsync(
-        React.createElement(MagicLinkEmail, {
-          supabase_url: Deno.env.get('SUPABASE_URL') ?? '',
-          token,
-          token_hash,
-          redirect_to,
-          email_action_type,
-        })
-      )
       subject = 'Your magic link'
+      html = `
+        <h1>Magic Link</h1>
+        <p><a href="${confirmLink}">Click here to continue</a></p>
+        <p>Or copy and paste this code: ${token}</p>
+      `
     }
 
     console.log('Sending email to:', user.email)
