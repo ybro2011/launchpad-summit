@@ -6,8 +6,8 @@ import { Mail, Users, Calendar, Star } from "lucide-react";
 const benefits = [
   {
     icon: Users,
-    title: "Benefit 1",
-    description: "Description of the first benefit members receive"
+    title: "Connect with People",
+    description: "Connecting with likeminded people"
   },
   {
     icon: Calendar,
