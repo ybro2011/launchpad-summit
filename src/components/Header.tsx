@@ -4,7 +4,7 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <h1 className="font-display text-2xl font-bold text-primary">Society Name</h1>
+            <h1 className="font-display text-2xl font-bold text-primary-glow">Society Name</h1>
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
