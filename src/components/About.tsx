@@ -63,10 +63,10 @@ const About = () => {
             >
               <div className="bg-gradient-subtle rounded-lg p-8 shadow-elegant">
                 <blockquote className="font-display text-2xl text-primary italic mb-4 leading-relaxed">
-                  "Your inspirational quote or mission statement goes here. This should capture the essence of your society's vision."
+                  "The people who are crazy enough to think they can change the world are the ones who do."
                 </blockquote>
                 <cite className="font-body text-muted-foreground">
-                  — Quote Attribution
+                  — Steve Jobs
                 </cite>
               </div>
             </div>
