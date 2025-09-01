@@ -16,7 +16,7 @@ const Index = () => {
       <About />
       <CurvedSeparator 
         fromColor="hsl(0 0% 100%)" 
-        toColor="hsl(var(--muted))"
+        toColor="hsl(220 13% 91%)"
         direction="down" 
       />
       <Speakers />
