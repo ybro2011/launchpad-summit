@@ -48,7 +48,7 @@ const Events = () => {
             Upcoming Events
           </h2>
           <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Description of your events program. Edit this to describe the types of events you organize and their benefits.
+            Our events bring students together to learn from inspiring leaders and innovators. They can be attended online by anyone or in person exclusively by Perse students, providing opportunities to gain insights, ask questions, and connect with like-minded peers.
           </p>
         </div>
         
