@@ -44,8 +44,8 @@ const Hero = () => {
             <Button variant="hero" size="lg" className="shadow-glow">
               Join Us
             </Button>
-            <Button variant="outline-hero" size="lg">
-              Secondary Action
+            <Button variant="outline-hero" size="lg" onClick={() => window.location.href = '/events'}>
+              See All Events
             </Button>
           </div>
         </div>
