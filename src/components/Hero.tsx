@@ -42,7 +42,7 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
             <Button variant="hero" size="lg" className="shadow-glow">
-              Primary Action
+              Join Us
             </Button>
             <Button variant="outline-hero" size="lg">
               Secondary Action
