@@ -56,8 +56,8 @@ const Header = () => {
             </a>
           </nav>
           
-          <Button variant="primary" size="sm" className="shadow-elegant">
-            Call to Action
+          <Button variant="outline" size="sm" className="bg-background text-primary border-primary hover:bg-primary hover:text-primary-foreground shadow-elegant">
+            Join Now
           </Button>
         </div>
       </div>
