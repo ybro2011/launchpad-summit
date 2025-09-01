@@ -5,14 +5,24 @@ import { renderAsync } from 'npm:@react-email/components@0.0.22'
 import { MagicLinkEmail } from './_templates/magic-link.tsx'
 import { SignupConfirmationEmail } from './_templates/signup-confirmation.tsx'
 
-const resend = new Resend(Deno.env.get('RESEND_API_KEY') as string)
-const hookSecret = Deno.env.get('SEND_EMAIL_HOOK_SECRET') as string
+const resendApiKey = Deno.env.get('RESEND_API_KEY')
+const hookSecret = Deno.env.get('SEND_EMAIL_HOOK_SECRET')
+
+console.log('Environment check:', {
+  hasResendKey: !!resendApiKey,
+  hasHookSecret: !!hookSecret,
+  resendKeyPrefix: resendApiKey?.substring(0, 10) + '...'
+})
+
+const resend = new Resend(resendApiKey as string)
 
 Deno.serve(async (req) => {
   if (req.method !== 'POST') {
     return new Response('Method not allowed', { status: 405 })
   }
 
+  console.log('Received webhook request')
+  
   const payload = await req.text()
   const headers = Object.fromEntries(req.headers)
   const wh = new Webhook(hookSecret)
