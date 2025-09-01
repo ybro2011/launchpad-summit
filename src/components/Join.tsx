@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Mail, Users, Calendar, Star } from "lucide-react";
 
@@ -73,9 +74,11 @@ const Join = () => {
             <Button variant="primary" size="lg" className="shadow-glow mr-4 mb-4">
               Join Now
             </Button>
-            <Button variant="outline" size="lg" className="mb-4">
-              All Events
-            </Button>
+            <Link to="/events">
+              <Button variant="outline" size="lg" className="mb-4">
+                All Events
+              </Button>
+            </Link>
             
             <div className="mt-8 p-6 bg-white/60 backdrop-blur-sm rounded-lg border border-primary/20">
               <p className="font-body text-muted-foreground mb-2">
